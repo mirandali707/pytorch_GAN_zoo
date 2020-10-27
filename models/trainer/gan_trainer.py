@@ -421,6 +421,7 @@ class GANTrainer():
 
         if self.modelConfig.dimOutput == 1:
             transformList = [Transforms.Grayscale(1)] + transformList
+            transformList[-1] = Transforms.Normalize([0.5], [0.5])
 
         transform = Transforms.Compose(transformList)
 
